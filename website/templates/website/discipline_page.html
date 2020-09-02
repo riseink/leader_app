@@ -1,0 +1,29 @@
+{% extends "flexcomponents/flex_layout_page.html" %}
+{% load static wagtailimages_tags %}
+
+{% block content %}
+
+	<section class="discipline-page">
+		
+		{{ page.hero_area }}
+
+		<div class="wrapper">
+			<div class="discipline-intro flex-container">
+				{{ page.introduction }}
+			</div>
+			<div class="managers">
+			{% for manager in page.management.all %}
+				<div class="manager">
+					{% image manager.image original class="img-responsive" %}
+					<div class="manager-details">
+						<div class="manager-name">{{ manager.name }}</div>
+						<div class="manager-title">{{ manager.title }}</div>
+					</div>
+				</div>
+			{% endfor %}
+			</div>
+		</div>
+
+		{{ block.super }}
+	</section>
+{% endblock content %}

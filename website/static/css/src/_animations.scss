@@ -1,0 +1,42 @@
+$animate-x-distance: 1rem;
+$animate-y-distance: 1rem;
+$default-animation-duration: 500ms;
+$default-animation-delay: 0ms;
+
+// pre-animation classes
+// add these to an element to set opacity:0 and displace it slightly from its x or y origin
+.willFadeFromBottom {
+	@include will_fade_from_y($animate-y-distance);
+}
+
+.willFadeFromTop {
+	@include will_fade_from_y(-$animate-y-distance);
+}
+
+.willFadeFromLeft {
+	@include will_fade_from_x(
+		-$animate-x-distance,
+		$default-animation-duration,
+		$default-animation-delay
+	);
+}
+
+.willFadeFromRight {
+	@include will_fade_from_x(
+		$animate-x-distance,
+		$default-animation-duration,
+		$default-animation-delay
+	);
+}
+
+.willFadeIn {
+	@include will_fade_in;
+}
+
+// animation trigger class
+// add this to an element with one of the above classes to fade it in and have it slide
+// back to its origin
+.anim-complete {
+	opacity: 1 !important;
+	transform: translate(0%, 0%) !important;
+}

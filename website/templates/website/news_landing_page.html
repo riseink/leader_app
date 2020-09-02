@@ -1,0 +1,31 @@
+{% extends "flexcomponents/flex_layout_page.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+{% block content %}
+
+{{ block.super }}
+
+<main class="news-articles">
+{% for articles in news_pages %}
+	{% with articles.specific as article %}
+		<a href="{% pageurl article %}" class="article-preview__link">
+			<article class="article-preview">
+				<section class="copy">
+					<div class="date">{{article.date}}</div>
+					<div class="publisher">{{article.published_by}}</div>
+					<div class="headline">{{article.headline}}</div>
+					<div class="preview-button"><span class="button">Read More</span></div>
+				</section>
+				<section class="image">
+					{% if article.image %}	
+						{% image article.image original class="img-responsive" %}
+					{% else %}
+						<img src="/static/images/SCC_logo_red.png" class="img-responsive">
+					{% endif %}
+				</section>
+			</article>
+		</a>
+	{% endwith %}
+{% endfor %}
+</main>
+
+{% endblock content %}

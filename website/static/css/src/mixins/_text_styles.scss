@@ -1,0 +1,72 @@
+@import 'breakpoints';
+
+@mixin date-text-styles {
+	font-size: 0.75rem;
+	line-height: 1.25rem;
+	font-weight: $bold;
+	@include respond-to(md) {
+		font-size: 0.875rem;
+	}
+}
+@mixin publisher-text-styles {
+	font-size: 0.75rem;
+	line-height: 1.25rem;
+	font-weight: $regular;
+	color: $med-gray;
+	text-transform: uppercase;
+	@include respond-to(md) {
+		font-size: 1.125rem;
+		line-height: 1.5rem;
+		padding-top: 1.5rem;
+	    margin-bottom: 0.5rem;
+	}
+}
+@mixin headline-text-styles {
+	font-size: 1rem;
+	line-height: 1.25rem;
+	font-weight: $bold;
+	@include respond-to(md) {
+		font-size: 1.75rem;
+		line-height: 2rem;
+	}
+	@include respond-to(lg) {
+		font-size: 2.5rem;
+		line-height: 3rem;
+	}
+}
+@mixin nav-link-sm-text-styles {
+	font-size: 1.5rem;
+	line-height: 2rem;
+	font-weight: $light;
+	@include custom-underline(2px, $white);
+}
+@mixin byline-text-styles {
+	text-transform: uppercase;
+	font-weight: $bold;
+	font-size: 0.75rem;
+	@include respond-to(md) {
+		font-size: 1rem;
+	}
+}
+@mixin leadership_name {
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: $bold;
+    color: $primary;
+
+    @include respond-to(lg) {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+}
+
+@mixin leadership_title {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: $regular;
+
+    @include respond-to(lg) {
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+    }
+}

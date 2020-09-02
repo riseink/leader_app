@@ -1,0 +1,35 @@
+label {
+	display: block;
+	margin: 8px 0;
+}
+
+input {
+	background: transparent;
+}
+
+input[type="text"],
+input[type="url"] {
+	height: 24px;
+	width: 100%;
+	border: none;
+	border-bottom: 4px solid #d8d8d8;
+}
+
+input {
+	display: block;
+	margin: 0 0 32px;
+}
+
+form ul {
+	padding: 0;
+
+	li {
+		display: inline-block;
+		margin: 0 32px 0 0;
+		padding: 0;
+
+		input {
+			display: inline-block;
+		}
+	}
+} 

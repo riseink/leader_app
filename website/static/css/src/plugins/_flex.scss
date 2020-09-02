@@ -1,0 +1,19 @@
+// Overrides to wagtail-flex styles
+
+.flex-container {
+
+	// Mobile-first start with columns
+	flex-direction: column;
+
+	@include respond-to(md) {
+		flex-direction: row; // break down into row at 768px / tablet
+	}
+}
+
+.flex-item {
+	flex-basis: auto;
+
+	@include respond-to(md) {
+		flex-basis: 0;
+	}
+}

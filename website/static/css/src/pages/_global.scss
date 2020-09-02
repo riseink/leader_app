@@ -1,0 +1,168 @@
+// page headers (media copy)
+.flex-container.page-header {
+    .media-content {
+        @include responsive-padding;
+        margin: 0;
+        h2 {
+            @include font(h1-size);
+            font-weight: $bold;
+            color: $white;
+            text-align: left;
+            margin: 0;
+            padding: 0;
+        }
+    }
+    @include respond-to(sm) {}
+    @include respond-to(md) {}
+    @include respond-to(lg) {
+        .media-content {
+            h2 { @include font-large(h1-size); }
+            padding-top: 2.75rem;
+            padding-bottom: 2.75rem;
+        }
+    }
+}
+
+.bg-gray {
+    background-color: $light-gray;
+    background-image: $bg-texture;
+    background-blend-mode: multiply;
+}
+
+.gray-image-fade {
+    cursor: pointer;
+    width: 100%; height: auto;
+    @include fade_grayscale_to_color;
+}
+
+.red-headings {
+    h1,
+    h2,
+    h3 {
+        color: $primary;
+    }
+}
+
+
+.center-text-on-mobile {
+    @media (max-width: 767px) {
+        .flex-item {
+            text-align: center;
+        }
+    }
+}
+
+// center text and contain width to specified maximum
+.centered-text--sm {
+    h1, h2, h3, h4, p { 
+        padding-top: 0;
+        max-width: $xs-breakpoint;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+// center text and contain width to specified maximum
+.centered-text--md {
+    h1, h2, h3, h4, p { 
+        padding-top: 0;
+        max-width: $sm-breakpoint;
+        text-align: center;
+        margin: 0 auto;
+    }   
+}
+
+// center text and contain width to specified maximum
+.centered-text--lg {
+    h1, h2, h3, h4, p { 
+        padding-top: 0;
+        max-width: $md-breakpoint;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+// center text
+.centered-text--full {
+    h1, h2, h3, h4, p { 
+        padding-top: 0;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+// center media and contain width OF EACH ITEM to specified maximum
+.centered-media--sm {
+    .flex-item {
+        max-width: $xxs-breakpoint;
+        margin: 0 auto;
+        @include respond-to(md) {
+            .media-content {
+                padding: 0;
+            }
+            &:not(:only-of-type) {
+                &:first-child {
+                    margin-left: auto;
+                    margin-right: 0;
+                }
+                &:last-child {
+                    margin-right: auto;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+// center media and contain width OF EACH ITEM to specified maximum
+.centered-media--md {
+    .flex-item {
+        max-width: $xs-breakpoint;
+        margin: 0 auto;
+        @include respond-to(md) {
+            .media-content {
+                padding: 0;
+            }
+            &:not(:only-of-type) {
+                &:first-child {
+                    margin-left: auto;
+                    margin-right: 0;
+                    .media-content {
+                        padding-right: 0;
+                    }
+                }
+                &:last-child {
+                    margin-right: auto;
+                    margin-left: 0;
+                    .media-content {
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// center media and contain width OF EACH ITEM to specified maximum
+.centered-media--lg {
+    .flex-item {
+        max-width: $sm-breakpoint;
+        margin: 0 auto;
+        @include respond-to(md) {
+            .media-content {
+                padding: 0;
+            }
+            &:not(:only-of-type) {
+                &:first-child {
+                    margin-left: auto;
+                    margin-right: 0;
+                }
+                &:last-child {
+                    margin-right: auto;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+

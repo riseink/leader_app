@@ -1,0 +1,59 @@
+{% extends "flexcomponents/flex_layout_page.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+
+	{{ block.super }}
+
+	<div id="scroll-indicator">
+		<svg class="animated bounce" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"><path class="path" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/><path fill="none" d="M0 0h24v24H0V0z"/></svg>
+	</div>
+
+	<div class="loader" id="home-loader">
+		<svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+		   <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+		</svg>
+	</div>
+
+	{% if page.intro_videos.all %}
+		<div id="intro_videos" class="intro-videos-hidden">
+			<div class="block-video">
+				<video class="fluid-video" playsinline autoplay muted loop>
+					<source src="#" type="video/mp4">
+				</video>
+			</div>
+		</div>
+	{% endif %}
+
+	{% for sample in page.featured_work_samples.all  %}
+		{% if sample.work_sample %}
+			
+			<div class="work-sample {% cycle 'default' 'reverse' %}">
+				<div class="under">
+					<div class="looping-video">
+						{{sample.work_sample.featured_video}}
+					</div>
+				</div>
+
+				<div class="over" href="{% pageurl sample.work_sample %}">
+					<div class="over__section over__image">
+						<a class="over__image--click-target" href="{% pageurl sample.work_sample %}">
+							{% image sample.work_sample.featured_image fill-640x480 as new_image %}
+							<div class="image"><img src="" data-src="{{ new_image.url }}" class="lazy" /></div>
+						</a>
+					</div>
+					<div class="over__section over__copy">
+						<div class="over__copy--wrapper">
+							<span class="client">{{ sample.work_sample.client.name }}</span>
+							<span class="title">
+								<a class="custom-underline" href="{% pageurl sample.work_sample %}">{{ sample.work_sample.work_title }}</a>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		{% endif %}
+	{% endfor %}
+
+{% endblock content %}

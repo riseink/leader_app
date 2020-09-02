@@ -1,0 +1,28 @@
+{% extends "flexcomponents/flex_layout_page.html" %}
+{% load static wagtailimages_tags wagtailcore_tags %}
+
+{% block content %}
+	<div class="bg-white">
+		<div class="wrapper job-details padding-md">
+			<h3 class="job-title">{{ page.title }}</h3>
+			<h4 class="department">{{ page.department }}</h4>
+		
+			<div class="padding-sm-t">
+				{{ block.super }}
+			</div>
+		</div>
+	</div>
+
+	<div class="bg-light-gray">
+		<div class="wrapper padding-md">
+			<h4 class="padding-md-b">Apply</h4>
+			<form action="{% pageurl page.form_page %}" method="POST" enctype="multipart/form-data">
+				{% csrf_token %}
+				<input name="Job Title" type="hidden" value="{{page.title}}">
+				{{ page.form_page.get_form }}
+				<input type="submit" class="button">
+			</form>
+		</div>
+	</div>
+
+{% endblock content %}

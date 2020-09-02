@@ -1,0 +1,23 @@
+{% load wagtailcore_tags %}
+{% load wagtailsettings_tags %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% get_settings %}
+
+
+{% with page.clients.all as clients %}
+
+<div class="clients">
+	{% for client in clients %}
+		{% with client.client as client %}
+		    <div class="client">
+		    	<div class="logo">
+		    		{% image client.logo original %}
+		    	</div>
+		    </div>
+		{% endwith %}
+	{% endfor %}
+
+</div>
+    
+{% endwith %}

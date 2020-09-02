@@ -1,0 +1,187 @@
+.tinder-page {
+    
+    .tinder-profile {
+
+        // border: 1px solid red;
+
+        display: flex;
+        flex-direction: column;
+        
+        .profile-left, .profile-right {
+            padding: 1.5rem;
+            // border: 1px solid blue;
+        }
+
+        .profile-right {
+            padding-top: 0;
+        }
+
+        .profile-left {
+
+            display: block;
+
+            .flex-item {
+              flex: none;
+              max-width: none;
+              overflow: auto;
+            }
+
+        }
+
+        @include respond-to(md) {
+        	.profile-left, .profile-right { 
+                padding: 3rem; 
+            }
+        	.profile-right { 
+                padding-top: 0;
+            }
+            .profile-left { 
+                padding-bottom: 1rem; 
+            }
+        }
+        @include respond-to(lg) {
+
+            flex-direction: row;
+        	
+            .profile-left, .profile-right {
+                width: 45%;
+            }
+        	.profile-left {
+                width: 40%;
+        		padding: 5.5rem 4rem 5.5rem 3rem;
+        	}
+        	.profile-right {
+        		padding: 5.5rem 0;
+        	}
+        }
+
+        h2 {
+            color: $primary;
+            @include responsive-font(h2-size, md);
+        }
+
+        ul.tinder-attributes {
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        li.tinder-attribute {
+        	margin: 2rem 0;
+        	@media (max-width: 1023px) {
+        		&:first-of-type {
+        			margin-top: 1rem;
+        		}
+        	}
+       
+            padding: 0px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .tinder-attribute-icon {
+        	margin-right: 1rem;
+        	width: 1rem;
+            height: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                transform: scale(0.5);
+                height: auto;
+            }
+
+            @include respond-to(md) {
+                margin-right: 2rem;
+                width: 2rem;
+                height: 2rem;
+                img {
+                    transform: unset;
+                }
+            }
+        }
+
+        .tinder-attribute-text {
+        	font-size: 0.875rem;
+        	line-height: 1.5;
+
+    		@include respond-to(md) {
+                margin-left: 0;
+    			font-size: 1.5rem;
+    			line-height: 2rem;
+    			padding-top: 0.25rem;
+    		}
+        }
+        
+        .carousel-slide {
+        	max-height: 450px;
+        }
+
+        .owl-nav {
+            color: $white;
+            top: 47%;
+            button {
+                background: rgba(255,255,255, 0.3);
+                &:hover {
+                    background-color: rgba(255,255,255, 0.5);
+                }
+                img {
+                    padding: 1rem;
+                }
+            }
+        }
+
+        .tinder-buttons {
+        	display: flex;
+        }
+
+        .tinder-button {
+        	background-color: #eaeaea;
+    	    background-image: $bg-texture;
+    	    background-blend-mode: multiply;
+        	width: 50%;
+        	margin-top: 1rem;
+        	&:not(:last-child) { 
+        		margin-right: 1rem; 
+        		@include respond-to(lg) {
+        			margin-right: 0.25rem	
+        		}
+        	}
+        	display: flex;
+        	justify-content: center;
+        	align-items: center;
+        	height: 4rem;
+        	@include respond-to(lg) {
+        		height: 9.5rem;
+        		margin-top: 0.25rem;
+        	}
+        	img {
+        		transform: scale(0.5);
+        		@include respond-to(lg) {
+        			transform: scale(1);
+        		}
+        	}
+        }
+    }
+}
+
+.custom-404-container {
+
+    align-items: center;
+    padding: 3rem 0;
+
+    .padding-sm { padding: unset; }
+
+    .flex-item:last-child {
+        padding: 3rem;
+    }
+
+    .button-group {
+        text-align: center;
+        @include respond-to(md) {
+            text-align: unset; 
+        }
+    }
+
+}

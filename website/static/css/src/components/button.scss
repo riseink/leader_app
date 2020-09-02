@@ -1,0 +1,63 @@
+
+.button {
+  font-weight: $bold;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 0.875rem;
+  margin: 1rem 0 0 0;
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+  cursor: pointer;
+  @include transition_all;
+  @include anti;
+  @include respond-to(md) {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+
+  // primary -- default colors
+  color: $button-color;
+  background-color: $button-bg-color;
+  border: $button-border;
+
+  &:hover {
+    color: $button-hover-color;
+    background-color: $button-hover-bg-color;
+    border: 3px solid $button-hover-border;
+  }
+
+  // secondary -- inverse colors
+  &.secondary {
+    color: $button-secondary-color;
+    background: $button-secondary-bg-color;
+    border: 3px solid $button-secondary-border;
+    &:hover {
+      color: $button-secondary-hover-color;
+      background-color: $button-secondary-hover-bg-color;
+      border: 3px solid $button-secondary-hover-border;
+    }
+  }
+  
+  // tertiary
+  &.tertiary {
+    color: $button-tertiary-color;
+    background-color: $button-tertiary-bg-color;
+    border: $button-tertiary-border;
+    &:hover {
+      color: $button-tertiary-hover-color;
+      background-color: $button-tertiary-hover-bg-color;
+      border: $button-tertiary-hover-border;
+    }
+  }
+
+  &.btn-wide {
+    padding: 0.5rem 2rem;
+  }
+
+  &.active {
+    color: $button-color;
+    background-color: $button-bg-color;
+    cursor: default;
+  }
+}

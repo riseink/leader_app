@@ -1,0 +1,37 @@
+{% extends "flexcomponents/flex_layout_page.html" %}
+{% load wagtailcore_tags %}
+
+
+{% block content %}
+	<div class="bg-white">
+
+		{{ block.super }}
+
+		<div class="job-listings bg-light-gray">
+			<div class="wrapper">
+				<h3 class="padding-sm primary bold">Current Openings</h3>
+			</div>
+
+			{% for jobs in page.get_children.live %}
+			{% with jobs.specific as job %}
+			<div class="job-listing">
+				<div class="wrapper">
+					<div class="job-preview padding-sm">
+						<div class="description">
+							<h4 class="job-title">{{ job.title }}</h4>
+							<p>{{ job.short_description }}</p>
+						</div>
+						<div class="apply">
+							<a href="{{ job.url }}" class="button">Apply</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endwith %}
+		{% endfor %}
+		</div>
+
+		{{ page.closing_content }}
+	</div>
+	
+{% endblock content %}

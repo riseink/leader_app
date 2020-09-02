@@ -1,0 +1,88 @@
+@mixin responsive-wrapper-max-width() {
+	// increase max-width by the amount of padding being added
+	// to offset
+	max-width: calc(#{$wrapper} + (2*#{$padding-xxs}));
+	@media (min-width: $xs-breakpoint) {
+		max-width: calc(#{$wrapper} + (2*#{$padding-xs}));
+	}
+	@media (min-width: $sm-breakpoint) {
+		max-width: calc(#{$wrapper} + (2*#{$padding-sm}));
+	}
+	@media (min-width: $md-breakpoint) {
+		max-width: calc(#{$wrapper} + (2*#{$padding-md}));
+	}
+	@media (min-width: $lg-breakpoint) {
+		max-width: calc(#{$wrapper} + (2*#{$padding-lg}));
+	}
+	@media (min-width: $xl-breakpoint) {
+		max-width: calc(#{$wrapper} + (2*#{$padding-xl}));
+	}	
+}
+
+@mixin responsive-wrapper-max-width-md() {
+	// increase max-width by the amount of padding being added
+	// to offset
+	max-width: calc(#{$wrapper-md} + (2*#{$padding-xxs}));
+	@media (min-width: $xs-breakpoint) {
+		max-width: calc(#{$wrapper-md} + (2*#{$padding-xs}));
+	}
+	@media (min-width: $sm-breakpoint) {
+		max-width: calc(#{$wrapper-md} + (2*#{$padding-sm}));
+	}
+	@media (min-width: $md-breakpoint) {
+		max-width: calc(#{$wrapper-md} + (2*#{$padding-md}));
+	}
+	@media (min-width: $lg-breakpoint) {
+		max-width: calc(#{$wrapper-md} + (2*#{$padding-lg}));
+	}
+	@media (min-width: $xl-breakpoint) {
+		max-width: calc(#{$wrapper-md} + (2*#{$padding-xl}));
+	}	
+}
+
+@mixin responsive-wrapper-max-width-xl() {
+	// increase max-width by the amount of padding being added
+	// to offset
+	max-width: calc(#{$wrapper-xl} + (2*#{$padding-xxs}));
+	@media (min-width: $xs-breakpoint) {
+		max-width: calc(#{$wrapper-xl} + (2*#{$padding-xs}));
+	}
+	@media (min-width: $sm-breakpoint) {
+		max-width: calc(#{$wrapper-xl} + (2*#{$padding-sm}));
+	}
+	@media (min-width: $md-breakpoint) {
+		max-width: calc(#{$wrapper-xl} + (2*#{$padding-md}));
+	}
+	@media (min-width: $lg-breakpoint) {
+		max-width: calc(#{$wrapper-xl} + (2*#{$padding-lg}));
+	}
+	@media (min-width: $xl-breakpoint) {
+		max-width: calc(#{$wrapper-xl} + (2*#{$padding-xl}));
+	}	
+}
+
+
+
+@mixin wrapper-with-padding($size:"") {
+	margin: 0 auto;
+	
+	// use responsive max-widths w/ a little extra width 
+	// to offset first and last children padding
+	@if $size == "md" {
+		@include responsive-wrapper-max-width-md;
+	}
+	@else if $size == "xl" {
+		@include responsive-wrapper-max-width-xl;
+	}
+	@else {
+		@include responsive-wrapper-max-width;
+	}
+
+	> *:first-child {
+	  @include responsive-padding-l;
+	}
+
+	> *:last-child {
+	  @include responsive-padding-r;
+	}
+}

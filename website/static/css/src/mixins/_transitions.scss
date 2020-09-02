@@ -1,0 +1,32 @@
+$transition-time: .5s !default;
+
+@mixin transition_all {
+	transition: all $transition-time;
+	-moz-transition: all $transition-time;
+	-webkit-transition: all $transition-time;
+}
+
+@mixin transition_Z {
+	transition: all $transition-time;
+	-moz-transition: all $transition-time;
+	-webkit-transition: all $transition-time;
+	-webkit-transform: translateZ(0px);
+}
+
+@mixin transition_color {
+	transition: color $transition-time;
+	-moz-transition: color $transition-time;
+	-webkit-transition: color $transition-time;	
+}
+
+@mixin transition_border {
+	transition: border $transition-time;
+	-moz-transition: border $transition-time;
+	-webkit-transition: border $transition-time;
+}
+
+@mixin transition_opacity {
+	transition: opacity $transition-time;
+	-moz-transition: opacity $transition-time;
+	-webkit-transition: opacity $transition-time;	
+}

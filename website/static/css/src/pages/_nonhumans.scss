@@ -1,0 +1,18 @@
+.non-humans-container {
+    .overlay-gallery__grid {
+        padding: $padding-xxs;
+    }
+
+    @include respond-to(md) {
+        .overlay-gallery__grid {
+            padding: $padding-md;
+        }
+    }
+
+
+    @include respond-to(lg) {
+        .overlay-gallery__grid {
+            padding: $padding-lg;
+        }
+    }
+}

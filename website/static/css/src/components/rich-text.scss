@@ -1,0 +1,16 @@
+.rich-text {
+
+	ul {
+		list-style: none;
+	}
+
+	li {
+		font-family: $font-family-3;
+		border-left: 4px solid $secondary;
+		margin: 25px 0;
+		padding: 10px 0 10px 15px;
+		font-size: 18px;
+		line-height: 21px;
+	}
+
+}

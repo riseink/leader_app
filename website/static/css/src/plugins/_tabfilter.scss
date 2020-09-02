@@ -1,0 +1,36 @@
+/*
+ * Override styles for tabfilter
+ */
+
+//
+// Tabs
+//
+
+.tabs {
+    @include respond-to(md) {
+        flex-direction: column;
+    }
+
+
+    h3 i {
+        float: right;
+        margin-right: 20px;
+
+        @include respond-to(sm) {
+            margin-right: 0;
+        }
+
+
+        @include respond-to(md) {
+            margin-right: -40px;
+        }
+    }
+}
+
+.tab {
+    @include transition_all;
+
+    @include respond-to(md) {
+        padding: 20px;
+    }
+}

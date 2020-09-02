@@ -1,0 +1,19 @@
+{% load wagtailimages_tags %}
+
+{% for work_sample in work_samples %}
+{% if not work_sample.ghost_page %}
+{% image work_sample.featured_image fill-640x480 as featured_image %}
+<a class="work-grid-preview" href="{{ work_sample.url }}">
+  <div class="preview-image">
+    <img class="img-responsive" src="{{featured_image.url}}">
+  </div>
+  <div class="preview-info-wrapper">
+    <div class="preview-info">
+      <h6 class="preview-info-text client-name">{{ work_sample.client.name }}</h6>
+      <h3 class="preview-info-text campaign-title">{{ work_sample.work_title }}</h3>
+    </div>
+  </div>
+</a>
+{% endif %}
+{% endfor %}
+

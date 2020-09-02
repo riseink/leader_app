@@ -1,0 +1,70 @@
+.preview-text {
+	display: flex;
+	flex-direction: column;
+
+	@include respond-to(md) {
+		flex-direction: row;		
+	}
+}
+
+.preview-text-image {
+	flex-shrink: 0;
+	margin: 0 0 25px 0;
+}
+
+.preview-text-copy {
+	flex-grow: 1;
+}
+
+.preview-text-image--left {
+	@include respond-to(md) {
+		margin: 0 50px 0 0;
+	}
+}
+
+.preview-text-image--right {
+	@include respond-to(md) {
+		margin: 0 0 0 50px;
+		order: 1;
+	}
+}
+
+
+
+.preview-text--deals {
+	padding: 0 50px;
+
+	@include respond-to(md) {
+		border-right: 1px solid $primary;
+	}	
+
+	@include respond-to(xl) {
+		padding: 0 100px 0 0;
+	}
+
+	.preview-text-image {
+		display: none;
+
+		@include respond-to(lg) {
+			display: block;
+		}
+	}
+
+	.preview-text-copy {
+		text-align: center;
+
+		@include respond-to(md) {
+			text-align: left;
+		}
+
+		hr {
+			margin-left: auto;
+			margin-right: auto;
+
+			@include respond-to(md) {
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,10 @@
+Django>=1.11,<1.12
+wagtail>=2.0.1,<2.1
+gunicorn>=19.9,<19.10
+psycopg2>=2.8.4,<2.9
+wagtailmedia>=0.2.0,<0.3
+django-storages>=1.6.6,<2.0
+boto3>=1.7.70,<2.5
+instaloader>=4.1.1,<5.0
+django-ses>=0.8.7
+dj-database-url>=0.5.0,<0.6.0

@@ -1,0 +1,18 @@
+.footer {
+	box-sizing: border-box;
+
+	.social-media-link {
+		transition: opacity 250ms ease-in-out;
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+
+	@include respond-to(md) {
+		padding-left: 3rem;
+	}
+
+	@include respond-to(lg) {
+		padding-left: 5.5rem;
+	}
+}

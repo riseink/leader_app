@@ -1,0 +1,15 @@
+.DS_Store
+.idea
+*.pyc
+*.log
+/logs
+/data
+__pycache__
+/app/media
+node_modules
+styles.bundle.css
+*.bundle.js
+*.iml
+*.sql
+.env
+.vscode/

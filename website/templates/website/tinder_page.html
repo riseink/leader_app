@@ -1,0 +1,66 @@
+{% extends "flexcomponents/flex_layout_page.html" %}
+{% load static wagtailuserbar wagtailcore_tags wagtailimages_tags carousel_tags %}
+
+{% block content %}
+
+
+<section class="tinder-page wrapper-xl">
+
+	<section class="tinder-profile">
+		<section class="profile-left">
+			{{ page.tinder_image_carousel }}
+			<div class="tinder-buttons">
+				<a href="{% pageurl page.dislike_page %}" class="tinder-button">
+					<img src="{% static 'images/red_close_icon.png' %}">
+				</a>
+				<a href="{% pageurl page.like_page %}" class="tinder-button">
+					<img src="{% static 'images/red_heart_icon.png' %}">
+				</a>
+			</div>
+		</section>
+		<section class="profile-right">
+			<h2>{{ page.tinder_name }}, {{page.tinder_age}}</h2>
+
+			{% if page.tinder_attributes %}
+				<ul class="tinder-attributes">
+					{% for block in page.tinder_attributes %}
+					    {% include_block block with body_index=forloop.counter %}
+					{% endfor %}
+				</ul>
+			{% endif %}
+
+		</section>		
+	</section>
+
+	{{ block.super }}
+	
+</section>
+	
+{% endblock content %}
+
+{% block owl_carousel_js_block %}
+	{# override carousel defaults for tinder page #}
+
+	{# TODO: figure out how to pass navText as a keyword argument to {% carousel_js %} #}
+	<script type="text/javascript" src="{% static 'js/lib/owl.carousel.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/src/carousel.js' %}"></script>
+	<script type="text/javascript">
+
+	    $(function () {
+	        var owlCarouselOptions = {
+	            items: 1,
+	            loop: true,
+	            dots: false,
+	            autoplay: true,
+	            autoplayTimeout: 5000,
+	            nav: true,
+	            navText: [
+	            	"<img src='{% static "images/arrow-left-white.png" %}'>",
+	            	"<img src='{% static "images/arrow-right-white.png" %}'>"
+	            ]
+	        };
+	        initializeCarousels(owlCarouselOptions);
+	    });
+	</script>
+
+{% endblock owl_carousel_js_block %}

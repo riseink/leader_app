@@ -1,0 +1,346 @@
+.discipline-page {
+
+	.block-hero_area {
+		.media-content-image {
+			width: 100%;
+		}
+		.media-content-image img {
+			width: auto;
+			max-width: 100%;
+			max-height: 88px;
+		}
+	}
+
+	.wrapper {
+		.flex-item {
+			padding: 0.5rem;
+		}
+	}
+
+	.section-heading {
+		.media-content {
+			padding: 1rem;
+			@include respond-to(md) {
+				padding: 2rem 0;
+			}
+		}
+	}
+
+	.discipline-intro {
+
+		flex-direction: column;
+
+		// video
+		.block-introduction:first-child{
+			.flex-item {
+				padding: 1rem 0 0 0;
+				@include respond-to(md) {
+					padding-top: 2rem;
+				}
+			}
+		}
+
+		// text
+		.block-introduction:last-child {
+			@include responsive-padding-x;
+			@include respond-to(xs) {
+				.flex-container { flex-direction: row; }
+			}
+			@include respond-to(md) {
+				max-width: 67%;
+			}
+			margin: 0 auto;
+
+			h2 {
+				color: $primary;
+			}
+
+			// CONTENT, CONTENT, CONTENT
+			.flex-item:first-child {
+				text-align: center;
+				@include respond-to(md) {
+					text-align: right;
+				}
+				// flex: unset;
+			}
+
+			// What do you want to make?
+			.flex-item:last-child {
+				max-width: 485px;
+				p:first-of-type {
+					@media (max-width: 479px) {
+						padding-top: 0;
+					}
+				}
+			}
+			.media-content {
+				border: 0;
+				@media (max-width: 479px) {
+					padding: 0rem;
+				}
+				@media (max-width: 599px) and (min-width: 480px) {
+					padding: 0.5rem;
+				}
+			}
+		}
+	}
+
+	.managers {
+		@include responsive-padding-x;
+		margin-bottom: 2rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		@include respond-to(md) {
+			max-width: unset;
+			flex-direction: row;
+			padding: 0;
+		}
+	}
+
+	.manager {
+
+		@include respond-to(md) {
+			&:first-child {
+				padding-left: 1rem;
+			}
+			&:last-child {
+				padding-right: 1rem;
+			}
+		}
+
+		@media (min-width: 1268px) {
+			&:first-child {
+				padding-left: 0rem;
+			}
+			&:last-child {
+				padding-right: 0rem;
+			}
+		}
+
+		max-width: 400px;
+
+		flex: 1;
+		padding: 0.5rem;
+
+		.manager-details {
+			padding: 1rem 0 0 0;
+			text-transform: uppercase;
+
+			.manager-name {
+				@include leadership_name;
+			}
+
+			.manager-title {
+				@include leadership_title;
+			}
+		}
+	}
+
+	.discipline__featured-video-and-copy {
+		background-color: $light-gray;
+		background-image: $bg-texture;
+		background-blend-mode: multiply;
+		box-sizing: border-box;
+		@include responsive-padding-x;
+		padding-top: 1.5rem !important;
+		padding-bottom: 1.5rem !important;
+		align-items: center;
+		@include respond-to(md) {
+			justify-content: center;
+			margin: 0 auto;
+			text-align: right;
+		}
+		h2, h3 { @include responsive-font(h3-size, lg); color: $text-color; }
+		.flex-item {
+			padding: 0.5rem;
+			max-width: 610px;
+		}
+	}
+
+	.discipline__work-sample {
+		margin-top: 1.5rem;
+		align-items: center;
+		padding: 0 1.5rem;
+		position: relative;
+		box-sizing: border-box;
+		.media-content {
+			text-align: center;
+		}
+		@include respond-to(md) {
+			.media-content {
+				text-align: left;
+			}
+			padding: 0 3rem;
+		}
+		@include respond-to(lg) {
+			padding: 0 5.5rem;
+		}
+		h2, h3 { @include responsive-font(h3-size, lg); color: $text-color; }
+		i { color: $text-color-medium; font-size: inherit; 
+			@include respond-to(lg) {
+				font-size: 1.5rem;
+			}
+		}
+		.flex-item:first-child {
+			@include respond-to(md) {
+				.media-content {
+					text-align: right;
+				}
+			}
+		}
+
+		.padding-sm {
+			padding: 0;
+		}
+
+		.flex-item {
+			width: 100%;
+			@include respond-to(md) {
+				width: 50%;
+			}
+		}
+
+		// img-left copy-right
+		&:nth-of-type(even) {
+			z-index: 1;
+			.media-content-image {
+				position: relative;
+			}
+			// img
+			.flex-item:first-child {
+				z-index: 1;
+				@include respond-to(md) {
+					// max-width: 44%;
+				}
+			}
+
+			// text
+			.flex-item:last-child {
+				@include respond-to(md) {
+					transform: translateY(-1rem);
+				}
+				.media-content {
+					padding: 0 1.5rem;
+					@include respond-to(md) {
+						padding: 3rem;
+					}
+				}
+			}
+		}
+
+		// text-left img-right
+		&:nth-of-type(odd) {
+			padding: 1.5rem;
+			z-index: 0;
+			background-color: $light-gray;
+			background-image: $bg-texture;
+			background-blend-mode: multiply;
+			flex-direction: column-reverse;
+			@include respond-to(md) {
+				padding: 1.5rem 3rem;
+				flex-direction: row;
+				transform: translateY(-3rem);
+				.flex-item {
+					transform: translateY(3rem);
+				}
+			}
+			@include respond-to(lg) {
+				padding: 1.5rem 5.5rem;
+			}
+
+			// text
+			.flex-item:first-child {
+				@include respond-to(md) {
+					transform: translateY(1rem);
+				}
+				.media-content {
+					padding: 0 1.5rem;
+					@include respond-to(md) {
+						padding: 3rem;
+					}
+				}
+			}
+			// img
+			.flex-item:last-child {
+				@include respond-to(md) {
+					// max-width: 44%;
+				}
+			}
+		}
+	}
+
+	.willFadeInCustom {
+
+		@include respond-to(md) {
+
+			// baseline initial state and animation config
+			.flex-item {
+				transition: opacity 350ms ease-in-out, transform 500ms $glide;
+				opacity: 0;
+			}
+			
+			// rows in which image is on left, copy is on right
+			&:nth-child(even) {
+				// img init state
+				.flex-item:first-child {
+					transform: translate(-(4 * $animate-x-distance), 0);
+				}
+				// copy init state
+				.flex-item:last-child {
+					transform: translate((4 * $animate-x-distance), -1rem);
+					transition-delay: 250ms;
+				}
+
+				&.anim-complete {
+					// img post-animate state
+					.flex-item:first-child {
+						transform: translate(0, 0) !important;
+					}
+					// copy post-animate state
+					.flex-item:last-child {
+						// md only?
+						transform: translate(0, -1rem) !important;
+					}
+				}
+			}
+
+			// containers with offset gray bg
+			// rows in which copy is on left, image is on right
+			&:nth-child(odd) {
+
+				.flex-item:first-child {
+					transform: translate(-(4 * $animate-x-distance), 1rem);
+					transition-delay: 250ms;
+				}
+				// copy init state
+				.flex-item:last-child {
+					transform: translate((4 * $animate-x-distance), 3rem);
+				}
+
+				&.anim-complete {
+					transform: translate(0, -3rem) !important;
+					.flex-item:first-child {
+						transform: translate(0, 1rem) !important;
+					}
+					.flex-item:last-child {
+						transform: translate(0, 3rem) !important;
+					}
+				}
+			}
+
+			&.anim-complete {
+				.flex-item:first-child {
+					opacity: 1;
+					transform: translateX(0);
+				}
+				.flex-item:last-child {
+					opacity: 1;
+					transform: translateX(0)
+				}
+			}
+		}
+	}
+
+}

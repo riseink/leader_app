@@ -1,0 +1,29 @@
+//
+// Packaged Component Styles
+//
+
+// Package Stylesheets
+// TODO: move these imports to app.js
+//@import '../../../../src/wagtail-base/base/static/css/src/base'; // wagtail-base currently has no styles
+@import '../../../../src/wagtail-flex/flex/static/css/src/flex';
+@import '../../../../src/wagtail-mediatext/mediatext/static/css/src/mediatext';
+@import '../../../../src/wagtail-vimeo/vimeo/static/css/src/vimeo';
+@import '../../../../src/wagtail-carousel/carousel/static/css/src/carousel';
+@import '../../../../src/wagtail-contact/contact/static/css/src/contact';
+@import '../../../../src/wagtail-iframe/iframe/static/css/src/iframe';
+@import '../../../../src/wagtail-tabfilter/tabfilter/static/css/src/tabfilter';
+@import '../../../../src/wagtail-magnificpopup/magnificpopup/static/css/src/magnificpopup';
+@import '../../../../src/wagtail-socialmedia/socialmedia/static/css/src/socialmedia';
+@import '../../../../src/wagtail-navbar/navbar/static/css/src/navbar';
+@import '../../../../src/wagtail-footer/footer/static/css/src/footer';
+@import '../../../../src/wagtail-overlay/overlay/static/css/src/overlay';
+
+// Override Stylesheets
+@import 'plugins/tabfilter';
+@import 'plugins/flex';
+@import 'plugins/mediatext';
+@import 'plugins/navbar';
+@import 'plugins/overlay';
+@import 'plugins/carousel';
+@import 'plugins/footer';
+@import 'plugins/vimeo';
