@@ -1,12 +1,40 @@
-//
-// Mixins
-//
 
-@import 'mixins/breakpoints';
-@import 'mixins/utilities';
-@import 'mixins/wrapper';
-@import 'mixins/fonts';
-@import 'mixins/transitions';
-@import 'mixins/shadows';
-@import 'mixins/animations';
-@import 'mixins/text_styles';
+@mixin respond-to($breakpoint) {
+
+    @if $breakpoint == "xxs" {
+      @media (min-width: $xxs-breakpoint) {
+        @content;
+      }
+    }
+    
+    @else if $breakpoint == "xs" {
+      @media (min-width: $xs-breakpoint) {
+        @content;
+      }
+    }
+  
+    @else if $breakpoint == "sm" {
+      @media (min-width: $sm-breakpoint) {
+        @content;
+      }
+    }
+  
+    @else if $breakpoint == "md" {
+      @media (min-width: $md-breakpoint) {
+        @content;
+      }
+    }
+  
+    @else if $breakpoint == "lg" {
+      @media (min-width: $lg-breakpoint) {
+        @content;
+      }
+    }
+  
+    @else if $breakpoint == "xl" {
+      @media (min-width: $xl-breakpoint) {
+        @content;
+      }
+    }
+  }
+  
