@@ -1,4 +1,3 @@
-{% extends "flexcomponents/flex_layout_page.html" %}
 {% load static wagtailuserbar wagtailcore_tags wagtailimages_tags carousel_tags %}
 
 {% block content %}
@@ -15,7 +14,7 @@
 			</div>
 		</div>
 
-		{{ block.super }}
+		
 
 	</section>
 
@@ -68,7 +67,7 @@
 	</script>
 {% endblock owl_carousel_js_block %}
 {% block extra_js %}
-{{ block.super }}
+
 <script>
     $(function() {
         var socialGalleries = $('[data-modal-class="gallery-modal__social"]');
