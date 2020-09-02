@@ -1,5 +1,3 @@
-{% load static wagtailuserbar %}
-
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -32,14 +30,7 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>
-            {% block title %}
-                {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
-            {% endblock %}
-            {% block title_suffix %}
-                {% with self.get_site.site_name as site_name %}
-                    {% if site_name %}- {{ site_name }}{% endif %}
-                {% endwith %}
-            {% endblock %}
+ 
         </title>
         <meta name="description" content="{{ self.search_description }}" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -69,41 +60,17 @@
         {# Polyfills #}
         <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver" integrity="sha384-83CYOGXsi59YYxBeS/ag/t615snxzc9UUt0t4ApSQHHKYmbmlQj/MuS9QywJHVDN" crossorigin="anonymous"></script>
 
-        {% block extra_css %}
-            {# Override this in templates to add extra stylesheets #}
-        {% endblock %}
+
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
-        {% wagtailuserbar %}
-
-        {# Navbar #}
-        {% block top_menu %}{% endblock %}
 
         {# Page Content #}
 		<div id="site_wrapper">
         {% block content %}{% endblock %}
 	    </div>
 
-        {# Violator #}
-        {% block violator %}{% endblock %}
-
-        {# Footer #}
-        {% block site_footer %}{% endblock %}
-
-        {# Global javascript #}
-        
-     	<script type="text/javascript" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous" src="{% static 'js/lib/jquery-3.3.1.min.js' %}"></script>
-        <script type="text/javascript" integrity="sha384-Cmu4SgU5CtnpVb8xGiYXdX3HU1/Sdhj1UiBx+P0oUE1OU6xhozovxw4RqEla5xYX" crossorigin="anonymous" src="{% static 'js/build/app.bundle.js' %}"></script>
-
-        {# Override this in templates to add extra javascript #}
-        {% block extra_js %}{% endblock %}
-
-
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-
-        {# AddThis script goes in this block #}
-        {% block addthis_js %}{% endblock %}
+       
     </body>
 </html>
 

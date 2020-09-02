@@ -25,21 +25,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # Application definition
 
 INSTALLED_APPS = [
-    # Wagtail Foundation Components
-    'src.wagtail-base.base.apps.BaseConfig',
-    'src.wagtail-flex.flex.apps.FlexConfig',
-    'src.wagtail-mediatext.mediatext.apps.MediatextConfig',
-    'src.wagtail-carousel.carousel.apps.CarouselConfig',
-    'src.wagtail-tabfilter.tabfilter.apps.TabfilterConfig',
-    'src.wagtail-vimeo.vimeo.apps.VimeoConfig',
-    'src.wagtail-contact.contact.apps.ContactConfig',
-    'src.wagtail-iframe.iframe.apps.IframeConfig',
-    'src.wagtail-magnificpopup.magnificpopup.apps.MagnificpopupConfig',
-    'src.wagtail-navbar.navbar.apps.NavbarConfig',
-    'src.wagtail-flexcomponents.flexcomponents.apps.FlexcomponentsConfig',
-    'src.wagtail-socialmedia.socialmedia.apps.SocialmediaConfig',
-    'src.wagtail-footer.footer.apps.FooterConfig',
-    'src.wagtail-overlay.overlay.apps.OverlayConfig',
+    
 
     # For S3 Storage
     'storages',
