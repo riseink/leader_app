@@ -29,7 +29,16 @@ from wagtail.documents.models import get_document_model
 class HomePage(Page):
     pass
 
-class UserPage(Page):
+class GolfersPage(Page):
+
+    content_panels = Page.content_panels + [
+
+    	InlinePanel('user_info'),
+
+    ]
+    
+class UserModel(Orderable):
+    page = ParentalKey(GolfersPage, related_name='user_info')
 
     TEAM1 = 'T1'
     TEAM2 = 'T2'
