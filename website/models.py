@@ -85,11 +85,22 @@ class UserPage(Page):
     ]
 
     team_selection = models.CharField(
-        choices=YEAR_IN_SCHOOL_CHOICES,
+        choices=TEAM_CHOICES,
         default=TEAM1,
+        max_length=100,
     )
     first_name = models.CharField(max_length=100, blank=True)
     last_name = models.CharField(max_length=100, blank=True)
     golf_handicap = models.IntegerField(null=True, blank=True)
     score = models.IntegerField(null=True, blank=True)
+    disclaimer = models.BooleanField(default=False)
 
+    content_panels = Page.content_panels + [
+		FieldPanel('first_name'),
+        FieldPanel('last_name'),
+		FieldPanel('golf_handicap'),
+        FieldPanel('team_selection'),
+		FieldPanel('score'),
+		FieldPanel('disclaimer'),
+
+	]
