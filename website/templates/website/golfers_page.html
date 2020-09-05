@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block body_class %}template-standard{% endblock %}
+{% load wagtailimages_tags  wagtailcore_tags  %}
+
+{% block content %}
+<div class="bootstrap-table bootstrap4">
+<table id="target_bootstrap" >
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>team</th>
+            <th>Handicap</th>
+            <th>score</th>
+        </tr>
+    </thead>
+    <tbody>
+{% for user in page.user_info.all %}
+
+<tr>
+    <td>{{ user.id }}</td>
+    <td>{{ user.first_name }}  {{ user.last_name|make_list|first  }}</td>
+    <td>{{ user.team_selection }}</td>
+    <td>{{ user.golf_handicap }}</td>
+    <td>{{ user.score }}</td>
+</tr>
+
+{% endfor %}
+</tbody>
+</table>
+</div>
+<script>
+    $(document).ready(function() {
+        $('#target_bootstrap').DataTable();
+      });
+    </script>
+{% endblock %}
+
