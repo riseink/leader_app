@@ -36,7 +36,9 @@ class GolfersPage(Page):
     	InlinePanel('user_info'),
 
     ]
+
     
+
 class UserModel(Orderable):
     page = ParentalKey(GolfersPage, related_name='user_info')
 

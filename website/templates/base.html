@@ -37,9 +37,19 @@
         "order": [[ 4, "asc" ]]
     } );
       });
+
+
+      $('#name').click(function(e) {
+          e.preventDefault();
+          var table = $('#target_bootstrap').DataTable();
+ 
+ // Sort by column 1 and then re-draw
+ table
+     .order( [ 1 ] )
+     .draw();
+    });
     </script>
     </body>
 
 </html>
-
 
