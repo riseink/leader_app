@@ -33,7 +33,9 @@
 <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
 <script>
     $(document).ready(function() {
-        $('#target_bootstrap').DataTable();
+        $('#target_bootstrap').DataTable( {
+        "order": [[ 4, "asc" ]]
+    } );
       });
     </script>
     </body>
